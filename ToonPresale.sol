@@ -604,7 +604,7 @@ interface IRouter is IUniswapV2Router01 {
 
 pragma solidity ^0.8.0;
 
-contract PreSale is OwnerWithdrawable {
+contract ToonPresale is OwnerWithdrawable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
     using SafeERC20 for IERC20Metadata;
