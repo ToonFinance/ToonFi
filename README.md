@@ -1,6 +1,6 @@
 # ToonFi
 
-![](https://toon.finance/wp-content/webp-express/webp-images/uploads/2022/10/Token-512.png.webp)
+![](https://toon.finance/wp-content/uploads/2022/10/ToonFi-1.png)
 
 Presale for Toon Finance is now live you can join by visiting https://buy.toon.finance
 
