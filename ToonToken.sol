@@ -213,7 +213,7 @@ contract ToonToken is Context, IERC20, Ownable {
 
   function transferFrom(address sender, address recipient, uint256 amount) external returns (bool) {
     _transfer(sender, recipient, amount);
-    _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "BEP20: transfer amount exceeds allowance"));
+    _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
     return true;
   }
 
@@ -223,7 +223,7 @@ contract ToonToken is Context, IERC20, Ownable {
   }
 
   function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
-    _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "BEP20: decreased allowance below zero"));
+    _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
     return true;
   }
 
@@ -233,16 +233,16 @@ contract ToonToken is Context, IERC20, Ownable {
   }
 
   function _transfer(address sender, address recipient, uint256 amount) internal {
-    require(sender != address(0), "BEP20: transfer from the zero address");
-    require(recipient != address(0), "BEP20: transfer to the zero address");
+    require(sender != address(0), "ERC20: transfer from the zero address");
+    require(recipient != address(0), "ERC20: transfer to the zero address");
 
-    _balances[sender] = _balances[sender].sub(amount, "BEP20: transfer amount exceeds balance");
+    _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
     _balances[recipient] = _balances[recipient].add(amount);
     emit Transfer(sender, recipient, amount);
   }
 
   function _mint(address account, uint256 amount) internal {
-    require(account != address(0), "BEP20: mint to the zero address");
+    require(account != address(0), "ERC20: mint to the zero address");
 
     _totalSupply = _totalSupply.add(amount);
     _balances[account] = _balances[account].add(amount);
@@ -250,16 +250,16 @@ contract ToonToken is Context, IERC20, Ownable {
   }
 
   function _burn(address account, uint256 amount) internal {
-    require(account != address(0), "BEP20: burn from the zero address");
+    require(account != address(0), "ERC20: burn from the zero address");
 
-    _balances[account] = _balances[account].sub(amount, "BEP20: burn amount exceeds balance");
+    _balances[account] = _balances[account].sub(amount, "ERC20: burn amount exceeds balance");
     _totalSupply = _totalSupply.sub(amount);
     emit Transfer(account, address(0), amount);
   }
 
   function _approve(address owner, address spender, uint256 amount) internal {
-    require(owner != address(0), "BEP20: approve from the zero address");
-    require(spender != address(0), "BEP20: approve to the zero address");
+    require(owner != address(0), "ERC20: approve from the zero address");
+    require(spender != address(0), "ERC20: approve to the zero address");
 
     _allowances[owner][spender] = amount;
     emit Approval(owner, spender, amount);
@@ -267,6 +267,6 @@ contract ToonToken is Context, IERC20, Ownable {
 
   function _burnFrom(address account, uint256 amount) internal {
     _burn(account, amount);
-    _approve(account, _msgSender(), _allowances[account][_msgSender()].sub(amount, "BEP20: burn amount exceeds allowance"));
+    _approve(account, _msgSender(), _allowances[account][_msgSender()].sub(amount, "ERC20: burn amount exceeds allowance"));
   }
 }
