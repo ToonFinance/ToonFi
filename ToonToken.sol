@@ -151,7 +151,7 @@ contract Ownable is Context {
   }
 }
 
-contract ToonToken is Context, IERC20, Ownable {
+contract ToonFiToken is Context, IERC20, Ownable {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
@@ -164,8 +164,8 @@ contract ToonToken is Context, IERC20, Ownable {
   string private _name;
 
   constructor() public {
-    _name = 'Toon Token';
-    _symbol = 'TTF';
+    _name = 'ToonFi Token';
+    _symbol = 'TFT';
     _decimals = 18;
     _totalSupply = 1000000000000000000000000000;
     _balances[msg.sender] = _totalSupply;
