@@ -6,8 +6,9 @@ Presale for Toon Finance is now live you can join by visiting https://buy.toon.f
 
 Socials
 
-https://t.me/ToonSwapFinance
-https://twitter.com/ToonSwapFinance
+https://t.me/ToonSwapFinance;
+
+https://twitter.com/ToonSwapFinance;
 
 
 We're busy cooking donuts, we will update this soon.
