@@ -22,7 +22,7 @@
 		 
 pragma solidity 0.5.16;
 
-interface IBEP20 {
+interface IERC20 {
 
   function totalSupply() external view returns (uint256);
 
@@ -151,7 +151,7 @@ contract Ownable is Context {
   }
 }
 
-contract ToonToken is Context, IBEP20, Ownable {
+contract ToonToken is Context, IERC20, Ownable {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
